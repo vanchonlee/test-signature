@@ -48,3 +48,4 @@ jobs:
           echo ${{ steps.get_version.outputs.VERSION }}
           echo ${{ github.event.ref }}
           echo ${{ github.event_path }}
+          echo ${{ github.ref }}
