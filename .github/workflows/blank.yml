@@ -45,3 +45,4 @@ jobs:
           echo test, and deploy your project.
           echo $GITHUB_REF
           echo ${{ steps.get_version.outputs.VERSION }}
+          echo ${{ github.event.ref }}
