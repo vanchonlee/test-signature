@@ -54,3 +54,6 @@ jobs:
           echo $GITHUB_REF
           echo ${{ steps.get_version.outputs.VERSION }}
           echo ${{ github.event.ref }}
+          if [[ $GITHUB_REF == *"refs/tags/release-"* ]]; then
+            echo Push and deploy to live environment
+          fi
