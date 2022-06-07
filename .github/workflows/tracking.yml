@@ -1,9 +1,8 @@
 name: tracking-remove-tag
 
 on:
-  delete:
-    tag:
-      - '*'
+  push:
+    branches: [ test123 ]
 jobs:
   printJob:
     name: Print event
