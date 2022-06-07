@@ -2,7 +2,8 @@ name: tracking-remove-tag
 
 on:
   delete:
-    branches: [ vanchonlee-patch-1 ]
+    branches:
+      - '*'
     tag:
       - '*'
 jobs:
