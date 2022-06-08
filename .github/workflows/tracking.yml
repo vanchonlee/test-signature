@@ -1,8 +1,9 @@
 name: tracking-remove-tag
 
 on:
-  push:
-    branches: [ test123 ]
+  delete:
+    tags:
+      - '*'
 jobs:
   printJob:
     name: Print event
@@ -13,3 +14,9 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "$GITHUB_CONTEXT"
+      - name: Get information
+        id: infor
+        run: |
+          echo "::set-output name=user::$(jq '.actor' $GITHUB_CONTEXT)\n"
+          echo "::set-output name=tag_name::$(jq '.event.ref' $GITHUB_CONTEXT)\n"
+          echo "::set-output name=delete_time::$(jq '.event.repository.pushed_at' $GITHUB_CONTEXT)\n"
