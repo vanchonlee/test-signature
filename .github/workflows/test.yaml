@@ -22,7 +22,8 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          docker 
+          docker run nginx --name docker-nginx -d
+          docker rm docker-nginx
 
   deploy-staging:
     needs: [build]
