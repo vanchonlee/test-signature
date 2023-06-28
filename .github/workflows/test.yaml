@@ -22,7 +22,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          docker run --name test -it debian
+          docker run --name test -d -it debian
           docker rm test
 
   deploy-staging:
